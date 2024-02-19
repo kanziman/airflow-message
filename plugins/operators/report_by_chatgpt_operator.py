@@ -57,9 +57,5 @@ class ReportByChatgptOperator(BaseOperator):
             
             message = f'{title}\n\n {chatgpt_resp}'
             send_message(telegram_token, message, chat_id)
-            # set_tistory_post(access_token=tistory_access_token,
-            #                  blog_name='hjkim-sun',
-            #                  title=f'{yyyy}/{mm}/{dd} {hh}시 {market} 급등 {fluctuation_rate}% {ticker_name} 주목!',
-            #                  content=chatgpt_resp,
-            #                  tag_lst=[f'{market}급등','급등주',ticker_name])
+
             
