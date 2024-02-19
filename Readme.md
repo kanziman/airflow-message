@@ -32,17 +32,22 @@ Airflow 와 Chat GPT를 활용해 매시간 급등 종목의 기업개요 및 �
 ## Airflow 설치
 
 -   docker-compose.yaml 다운로드
+
+    ```
     curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.8.1/docker-compose.yaml'
+    ```
 
 -   Setting the right Airflow user
-    1. mkdir -p ./dags ./logs ./plugins ./config
-    2. echo -e "AIRFLOW_UID=$(id -u)" > .env
+    ```
+    mkdir -p ./dags ./logs ./plugins ./config
+    echo -e "AIRFLOW_UID=$(id -u)" > .env
+    ```
 -   init
+    ```
     docker compose up airflow-init
--   up
-    docker compose up
+    ```
 
-## git clone
+## Git clone
 
 -   Dockerfile create(root)
 
@@ -51,6 +56,12 @@ FROM apache/airflow:2.8.1
 ADD ./airflow-message/requirements.txt .
 RUN pip install apache-airflow==${AIRFLOW_VERSION} -r requirements.txt
 ```
+
+## Start
+
+    docker compose up --build
+
+## Variable
 
 > Parameter
 
