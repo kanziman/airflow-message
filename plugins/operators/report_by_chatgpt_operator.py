@@ -15,7 +15,7 @@ class ReportByChatgptOperator(BaseOperator):
     def execute(self, context):
         chatgpt_api_key = Variable.get('chatgpt_api_key')
         telegram_token = Variable.get('telegram_token')
-        chat_id = "-1002038105003"
+        chat_id = Variable.get('chat_id')
 
         now =  pendulum.now('Asia/Seoul')
         now_yyyymmmdd = now.strftime('%Y%m%d')
